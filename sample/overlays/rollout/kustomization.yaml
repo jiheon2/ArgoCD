@@ -4,3 +4,4 @@ kind: Kustomization
 resources:
   - nginx-canary-rollout.yaml
   - nginx-service.yaml
+  - nginx-bluegreen-rollout.yaml
