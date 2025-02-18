@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: service-b
+  namespace: app-of-apps
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/jiheon2/ArgoCD.git'
+    targetRevision: main
+    path: sample/overlays/rollout/canary
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: app-of-apps
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
