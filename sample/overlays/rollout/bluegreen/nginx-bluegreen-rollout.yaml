@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Rollout
 metadata:
-  name: nginx-bluegreen-rollout
+  name: nginx-blue-green-rollout
   namespace: bluegreen
 spec:
   replicas: 5
