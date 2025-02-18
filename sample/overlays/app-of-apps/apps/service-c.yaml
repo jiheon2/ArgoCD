@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: service-b
+  name: service-c
   namespace: app-of-apps
 spec:
   project: default
