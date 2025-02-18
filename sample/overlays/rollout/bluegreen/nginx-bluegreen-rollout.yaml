@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Rollout
 metadata:
   name: nginx-bluegreen-rollout
-  namespace: default
+  namespace: bluegreen
 spec:
   replicas: 5
   strategy:
@@ -28,7 +28,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: nginx-active
-  namespace: default
+  namespace: bluegreen
 spec:
   selector:
     app: nginx
@@ -41,7 +41,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: nginx-preview
-  namespace: default
+  namespace: bluegreen
 spec:
   selector:
     app: nginx
