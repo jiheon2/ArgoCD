@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: applicationset-cluster
+spec:
+  generators:
+    - clusters:
+        selector:
+          matchLabels:
+            environment: test
+  template:
+    metadata:
+      name: '{{name}}'
+    spec:
+      project: default
+      source:
+        repoURL: 'https://github.com/jiheon2/ArgoCD.git'
+        targetRevision: main
+        path: 'sample/overlays/app-of-apps'
+      destination:
+        server: '{{server}}'  # 클러스터 API 서버 주소
+        namespace: application-cluster
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+          - CreateNamespace=true

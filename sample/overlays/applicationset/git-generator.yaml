@@ -1,0 +1,29 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: sample-git
+spec:
+  generators:
+    - git:
+        repoURL: 'https://github.com/jiheon2/ArgoCD.git'
+        revision: main
+        directories:
+          - path: 'sample/overlays/rollout/*'
+  template:
+    metadata:
+      name: '{{name}}'
+    spec:
+      project: default
+      source:
+        repoURL: 'https://github.com/jiheon2/ArgoCD.git'
+        targetRevision: main
+        path: '{{path}}'
+      destination:
+        name: in-cluster    # 혹은 등록된 다른 클러스터 이름
+        namespace: applicationset-git
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+          - CreateNamespace=true

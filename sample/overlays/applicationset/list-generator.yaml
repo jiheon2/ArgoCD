@@ -1,0 +1,30 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: applicationset-list
+spec:
+  generators:
+    - list:
+        elements:
+          - cluster: in-cluster
+            path: sample/base
+          - cluster: sub-cluster
+            path: sample/base
+  template:
+    metadata:
+      name: '{{name}}'
+    spec:
+      project: default
+      source:
+        repoURL: 'https://github.com/jiheon2/ArgoCD.git'
+        targetRevision: main
+        path: '{{path}}'
+      destination:
+        name: '{{cluster}}'   # Argo CD에 등록된 클러스터 이름
+        namespace: applicationset-list
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+          - CreateNamespace=true
