@@ -8,18 +8,18 @@ spec:
         repoURL: 'https://github.com/jiheon2/ArgoCD.git'
         revision: main
         directories:
-          - path: 'sample/overlays/rollout/*'
+          - path: sample/overlays/rollout/*
   template:
     metadata:
-      name: '{{name}}'
+      name: applicationset-cluster
     spec:
       project: default
       source:
         repoURL: 'https://github.com/jiheon2/ArgoCD.git'
         targetRevision: main
-        path: '{{path}}'
+        path: sample/base
       destination:
-        name: in-cluster    # 혹은 등록된 다른 클러스터 이름
+        name: in-cluster
         namespace: applicationset
       syncPolicy:
         automated:

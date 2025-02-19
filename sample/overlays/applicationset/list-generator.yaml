@@ -12,15 +12,15 @@ spec:
             path: sample/base
   template:
     metadata:
-      name: '{{name}}'
+      name: applicationset-list
     spec:
       project: default
       source:
         repoURL: 'https://github.com/jiheon2/ArgoCD.git'
         targetRevision: main
-        path: '{{path}}'
+        path: sample/base
       destination:
-        name: '{{cluster}}'   # Argo CD에 등록된 클러스터 이름
+        name: in-cluster
         namespace: applicationset
       syncPolicy:
         automated:

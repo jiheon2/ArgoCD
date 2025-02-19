@@ -10,15 +10,15 @@ spec:
             environment: test
   template:
     metadata:
-      name: '{{name}}'
+      name: applicationset-cluster
     spec:
       project: default
       source:
         repoURL: 'https://github.com/jiheon2/ArgoCD.git'
         targetRevision: main
-        path: 'sample/overlays/app-of-apps'
+        path: sample/base
       destination:
-        server: '{{server}}'  # 클러스터 API 서버 주소
+        server: 'https://kubernetes.default.svc'
         namespace: applicationset
       syncPolicy:
         automated:

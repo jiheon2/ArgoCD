@@ -14,18 +14,18 @@ spec:
               repoURL: 'https://github.com/jiheon2/ArgoCD.git'
               revision: main
               directories:
-                - path: 'sample/base'
+                - path: sample/base
   template:
     metadata:
-      name: '{{name}}'
+      name: applicationset-matrix
     spec:
       project: default
       source:
         repoURL: 'https://github.com/jiheon2/ArgoCD.git'
         targetRevision: main
-        path: '{{path}}'
+        path: sample/base
       destination:
-        name: '{{cluster}}'
+        name: in-cluster
         namespace: applicationset
       syncPolicy:
         automated:
