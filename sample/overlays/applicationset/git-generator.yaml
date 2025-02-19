@@ -20,7 +20,7 @@ spec:
         path: '{{path}}'
       destination:
         name: in-cluster    # 혹은 등록된 다른 클러스터 이름
-        namespace: applicationset-git
+        namespace: applicationset
       syncPolicy:
         automated:
           prune: true

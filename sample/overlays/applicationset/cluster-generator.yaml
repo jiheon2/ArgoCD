@@ -19,7 +19,7 @@ spec:
         path: 'sample/overlays/app-of-apps'
       destination:
         server: '{{server}}'  # 클러스터 API 서버 주소
-        namespace: application-cluster
+        namespace: applicationset
       syncPolicy:
         automated:
           prune: true

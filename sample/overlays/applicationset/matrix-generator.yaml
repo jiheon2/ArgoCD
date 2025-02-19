@@ -26,7 +26,7 @@ spec:
         path: '{{path}}'
       destination:
         name: '{{cluster}}'
-        namespace: applicationset-matrix
+        namespace: applicationset
       syncPolicy:
         automated:
           prune: true
