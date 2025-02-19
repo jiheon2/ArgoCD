@@ -6,12 +6,13 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/jiheon2/ArgoCD.git
-    targetRevision: main
-    path: sample/app-of-apps/charts/nginx
+    repoURL: https://charts.bitnami.com/bitnami
+    targetRevision: latest
     helm:
-      valueFiles:
-        - main-values.yaml
+      values: |
+        replicaCount: 1
+        service:
+          type: ClusterIP
   destination:
     server: https://kubernetes.default.svc
     namespace: default

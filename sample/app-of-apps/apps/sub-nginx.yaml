@@ -6,12 +6,13 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/jiheon2/ArgoCD.git
-    targetRevision: main
-    path: sample/app-of-apps/charts/nginx
+    repoURL: https://charts.bitnami.com/bitnami
+    targetRevision: latest
     helm:
-      valueFiles:
-        - sub-values.yaml
+      values: |
+        replicaCount: 2
+        service:
+          type: ClusterIP
   destination:
     server: https://192.168.0.104:6443
     namespace: default
