@@ -4,7 +4,7 @@ metadata:
   name: nginx-blue-green-rollout
   namespace: bluegreen
 spec:
-  replicas: 5
+  replicas: 1
   strategy:
     blueGreen:
       activeService: nginx-active
