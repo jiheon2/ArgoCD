@@ -8,6 +8,7 @@ spec:
   source:
     repoURL: https://charts.bitnami.com/bitnami
     targetRevision: latest
+    chart: nginx
     helm:
       values: |
         replicaCount: 1
