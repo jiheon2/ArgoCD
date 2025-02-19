@@ -12,13 +12,13 @@ spec:
             url: https://192.168.0.104:6443
   template:
     metadata:
-      name: '{{cluster}}-guestbook'
+      name: '{{cluster}-nginx'
     spec:
       project: default
       source:
-        repoURL: https://github.com/argoproj/argo-cd.git
+        repoURL: https://github.com/jiheon2/ArgoCD.git
         targetRevision: HEAD
-        path: applicationset/examples/list-generator/guestbook/{{cluster}}
+        path: sample/base
       destination:
         server: '{{url}}'
-        namespace: guestbook
+        namespace: nginx
