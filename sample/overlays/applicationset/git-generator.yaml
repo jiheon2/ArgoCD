@@ -18,6 +18,8 @@ spec:
         repoURL: 'https://github.com/jiheon2/ArgoCD.git'
         targetRevision: main
         path: sample/base
+        directory:
+          recurse: true
       destination:
         name: in-cluster
         namespace: applicationset
