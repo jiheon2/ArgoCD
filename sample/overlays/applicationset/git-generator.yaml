@@ -8,7 +8,7 @@ spec:
         repoURL: 'https://github.com/jiheon2/ArgoCD.git'
         revision: main
         directories:
-          - path: sample/overlays/rollout/*
+          - path: sample/base
   template:
     metadata:
       name: applicationset-cluster
