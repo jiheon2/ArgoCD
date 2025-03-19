@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: test-52
+  name: test-53
   labels:
     app: test
   namespace: default
@@ -19,7 +19,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: test-52
+  name: test-53
   labels:
     app: test
   namespace: default
