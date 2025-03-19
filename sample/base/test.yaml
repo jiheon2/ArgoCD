@@ -33,6 +33,6 @@ spec:
     spec:
       containers:
         - name: test
-image: 34.22.79.12:30003/source/test-image:v50
+          image: 34.22.79.12:30003/source/test-image:v52
           ports:
             - containerPort: 80
