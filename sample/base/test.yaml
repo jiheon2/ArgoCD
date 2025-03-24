@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: test-68
+  name: test-69
   labels:
     app: test
   namespace: default
@@ -19,7 +19,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: test-68
+  name: test-69
   labels:
     app: test
   namespace: default
@@ -35,6 +35,6 @@ spec:
     spec:
       containers:
         - name: test
-          image: 34.22.79.12:30003/source/test-image:v68
+          image: 34.22.79.12:30003/source/test-image:v69
           ports:
             - containerPort: 80
